@@ -1,47 +1,34 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import BrandImage from './Brand';
 
-const Column = () => {
-    return (
-        <div
-            // style={{ width: '200px', height: '700px' }}
-        >
-            <div className="image_wrapper mx-auto my-2">
-                <img src={"/images/one.png"} alt="" className="h-[40px]" />
-            </div>
-            <div className="image_wrapper mx-auto my-2">
-                <img src={"/images/two.png"} alt="" className="h-[40px]" />
-            </div>
-            <div className="image_wrapper mx-auto my-2">
-                <img src={"/images/three.png"} alt="" className="h-[40px]" />
-            </div>
-            <div className="image_wrapper mx-auto my-2">
-                <img src={"/images/four.png"} alt="" className="h-[40px]" />
-            </div>
-            <div>
-                <img src={"/images/five.png"} alt="" className="h-[40px]" />
-            </div>
-            <div className="image_wrapper mx-auto my-2">
+const BrandColumn = ({ images, direction }) => {
+  const columnVariants = {
+    animate: {
+      y: direction === 'up' ? '100%' : '-100%',
+      transition: {
+        duration: 20,
+        ease: 'linear',
+        repeat: Infinity,
+        repeatType: 'loop',
+      },
+    },
+  };
 
-                <img src={"/images/six.png"} alt="" className="h-[40px]" />
-            </div>
-            <div className="image_wrapper mx-auto my-2">
-
-                <img src={"/images/seven.png"} alt="" className="h-[40px]" />
-            </div>
-            <div className="image_wrapper mx-auto my-2">
-
-                <img src={"/images/eight.png"} alt="" className="h-[40px]" />
-            </div>
-            <div className="image_wrapper mx-auto my-2">
-
-                <img src={"/images/nine.png"} alt="" className="h-[40px]" />
-            </div>
-            <div className="image_wrapper mx-auto my-2">
-
-                <img src={"/images/ten.png"} alt="" className="h-[40px]" />
-            </div>
-        </div>
-    )
+  return (
+    // <motion.div
+    //   className="brand-column"
+    //   variants={columnVariants}
+    //   animate="animate"
+    //   style={{ flexDirection: direction === 'up' ? 'column-reverse' : 'column' }}
+    // >
+    <div>
+      {images.map((imageUrl, index) => (
+      <BrandImage key={index} imageUrl={imageUrl} />
+      ))}
+    {/* // </motion.div> */}
+    </div>
+  );
 };
 
-export default Column;
+export default BrandColumn;

@@ -4,21 +4,4 @@
 @tailwind components;
 @tailwind utilities;
 
-/* CSS for the scrolling animation */
-@keyframes scroll {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
-}
-
-/* Apply the animation to the marquee class */
-.marquee {
-  width: 200px;
-  height: 300px; /* Adjust the height as needed */
-  overflow: hidden;
-  border: 1px solid #ddd;
-  animation: scroll 10s linear infinite; /* Change 10s to your desired duration */
-}
+/* Example CSS styles, adjust as needed */
